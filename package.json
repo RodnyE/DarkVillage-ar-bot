@@ -1,0 +1,26 @@
+{
+  "name": "darkvillage",
+  "version": "0.0.1",
+  "description": "\"Autoresponder for WA bot-game\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RodnyE/DarkVillage-ar-bot.git"
+  },
+  "keywords": [
+    "autoresponder",
+    "bot",
+    "js",
+    "nodejs",
+    "game-txt"
+  ],
+  "author": "Rodny Estrada",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RodnyE/DarkVillage-ar-bot/issues"
+  },
+  "homepage": "https://github.com/RodnyE/DarkVillage-ar-bot#readme"
+}
