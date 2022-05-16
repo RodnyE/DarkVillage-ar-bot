@@ -10,5 +10,9 @@ bot.on("auth/login", DV.auth_login);
 bot.on("info", DV.bot_info);
 bot.on("main", DV.main);
 
+bot.on("game", DV.game);
+bot.on("game/create", DV.create_game);
+bot.on("game/join", DV.join_game);
+
 
 process.speed = () => bot.server_speed;

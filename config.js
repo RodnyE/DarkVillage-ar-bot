@@ -7,6 +7,8 @@ const PATH = {
   users: __dirname + "/database/users",
   lessons: __dirname + "/database/lessons",
   logic: __dirname + "/logic",
+  game: __dirname + "/logic/game",
+  engine: __dirname + "/logic/game/engine",
   admin: __dirname + "/logic/admin",
   global: __dirname + "/logic/global"
 };

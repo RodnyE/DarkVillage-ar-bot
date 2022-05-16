@@ -1,6 +1,5 @@
-const Game = require("../game.js");
 
-const Private = (req, res) => {
+const Private = (req, res, gx) => {
   
 };
 

@@ -20,12 +20,12 @@ const CreateGame = (req, res) => {
       players: {},
     };
     
-    res.send();
-  }
-  else res.send([
+  res.send([
     "%m% Una nueva partida en modo NORMAL a sido iniciada. Para unirte envía aquí en el grupo:\n" + COMMANDS.join, 
     "%m% Dentro de " + Game.TIME_WAITING/60000 + " minutos si no hay 5 jugadores o más, se cancelará la partida. Puedes ver el estado actual del juego enviando aquí en el grupo /dv"
   ]);
+  
+  }
   res.end();
 };
 

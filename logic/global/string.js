@@ -4,8 +4,8 @@ const COMMANDS = {
   login: "/dv login",
   main: "/dv main",
   ranking: "/dv ranking",
-  join: "/unirse",
-  create: "/crear partida"
+  join: "/unirme",
+  create: "/crear"
 };
 
 const GAME = {
@@ -13,11 +13,13 @@ const GAME = {
      "%m% Jugadores: \n%%list-players%%",
      "⏱️ Quedan %%time%%s para iniciar"
   ],
+  TIMEOUT: "%e% El tiempo de la partida a finalizado [ JUEGO CANCELADO ], para iniciar una nueva escriba " + COMMANDS.create,
   LOBBY_NOT_FOUND: "%e% Hubo un error, al parecer no se ha iniciado ninguna partida, si quiere comenzar una ejecute\n" + COMMANDS.create
 };
 
 module.exports = {
   COMMANDS,
+  GAME,
   WELCOME: "%m% Bienvenido a %app-name%, bot destinado a jugar el juego de rol con el mismo nombre. Ejecute para crearse una cuenta:\n" + COMMANDS.register + "\n\n Si ya tienes una cuenta inicia sesión con:\n" + COMMANDS.login,
   
   BOT_INFO: "%m% Acerca de...\n\n⏱️Servidor activo: %%time%%\n🚄Velocidad de respuesta: %%speed_porcent%%\%\n🔌Rendimiento: %%speed_status%%\n\n%m% %app-name% v-%%version%%\n%m% Desarrollador: Rodny Estrada",
