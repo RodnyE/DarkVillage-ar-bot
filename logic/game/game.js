@@ -29,7 +29,7 @@ Game.removeRoom = function(lobbyname){
 };
 
 Game.MIN_PLAYERS = 5;
-Game.MAX_PLAYERS = 10;
+Game.MAX_PLAYERS = 5;
 Game.TIME_WAITING = 2 * 60000;
 Game.lobby = {};
 

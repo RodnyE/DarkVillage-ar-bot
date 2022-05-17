@@ -29,6 +29,7 @@ const JoinGame = (req, res) => {
             /* añadir jugador a partida */
             lobby.players[user_data.id] = {
               name: user_data.nick,
+              ready: false,
               role: null,
               place: "home",
               turn: 0,
@@ -40,7 +41,7 @@ const JoinGame = (req, res) => {
             
             res.send(GAME.WAITING_PLAYERS
               .replace("%%list-players%%", getPlayersListString(lobby, Game.MIN_PLAYERS))
-              .replace("%%time%%", digitalMinutes((Game.TIME_WAITING - (Date.now() - lobby.time))/1000) + "s para iniciar")
+              .replace("%%time%%", digitalMinutes((Game.TIME_WAITING - (Date.now() - lobby.time))/1000))
             );
           } else res.send("%e% Lo sentimos, la partida se acaba de llenar. Espere a la próxima.");
         } else res.send("%e% " + user_data.nick + " ya está dentro de la partida");
@@ -50,7 +51,7 @@ const JoinGame = (req, res) => {
        }
       } else res.send("%e% Lo sentimos, " + user_data.nick + " no puede unirse a una partida que ya está en progreso.");
     } else res.send(GAME.LOBBY_NOT_FOUND);
-  } else res.send("%e% Hubo un error, " + req.user + " no puede unirse a la partida ya que no dispone de una cuenta. Ve al privado y escriba \n" + COMMANDS.main);
+  } else res.send( GAME.ACC_NOT_FOUND.replace("%%user%%", req.user ) );
 
   res.end();
 };

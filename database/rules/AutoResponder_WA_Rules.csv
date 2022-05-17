@@ -1,0 +1,10 @@
+"sep=,"
+"received_message","pattern_matching","reply_message","multiple_replies","multiple_reply_delay","multiple_reply_delay_max","recipients","contacts","ignored_contacts","reply_delay","reply_delay_max","specific_times","monday","tuesday","wednesday","thursday","friday","saturday","sunday","pause_type","pause_value","disabled","subrule_of","go_to_rule","req_screen_off","req_charging","req_silent","req_do_not_disturb","req_car_mode","prev_rule_timeout","priority_alert","probability","package_names"
+"/dv","none","http://localhost:8890/game","webhook","","","b","","","","","0","","","","","","","","seconds","0","0","","",,,,,,,,,
+"/start, /iniciar, /comenzar","none","http://localhost:8890/game/start","webhook","","","g","","","","","0","","","","","","","","seconds","0","0","","",,,,,,,,,
+"/crear, /nuevo, /create, /new","none","http://localhost:8890/game/create","webhook","","","g","","","","","0","","","","","","","","seconds","0","0","","",,,,,,,,,
+"/unirme, /unirse, /unir, /join","none","http://localhost:8890/game/join","webhook","","","g","","","","","0","","","","","","","","seconds","0","0","","",,,,,,,,,
+"/dv start, /dv main","none","http://localhost:8890/main","webhook","","","c","","","","","0","","","","","","","","seconds","0","0","","",,,,,,,,,
+"/dv register.*","expert","http://localhost:8890/auth/register","webhook","","","c","","","","","0","","","","","","","","seconds","0","0","","",,,,,,,,,
+"/dv login.*","expert","http://localhost:8890/auth/login","webhook","","","c","","","","","0","","","","","","","","seconds","0","0","","",,,,,,,,,
+"/dv info","none","http://localhost:8890/info","webhook","","","b","","","","","0","","","","","","","","seconds","0","0","","",,,,,,,,,

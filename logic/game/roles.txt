@@ -1,0 +1,12 @@
+ANTAGONISTAS:::
+- Hombre lobo
+- Pirómano *
+
+ALDEANOS:::
+- Aldeano comun
+- Tipo duro
+- Justiciero
+- Vidente
+- Prostituta
+- Arenero
+- Curda

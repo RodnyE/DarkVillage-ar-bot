@@ -5,14 +5,17 @@ const COMMANDS = {
   main: "/dv main",
   ranking: "/dv ranking",
   join: "/unirme",
+  start: "/iniciar",
   create: "/crear"
 };
 
 const GAME = {
   WAITING_PLAYERS: [
      "%m% Jugadores: \n%%list-players%%",
-     "⏱️ Quedan %%time%%s para iniciar"
+     "⏱️ Quedan %%time%%s para iniciar.\nPD: si ya hay suficientes jugadores, envie " + COMMANDS.start
   ],
+  WAITING_ROLES: "%m% Esperando recogida de roles...\n %%frac%% roles entregados",
+  ACC_NOT_FOUND: "%e% Hubo un error, %%user%% no puede unirse a la partida ya que no dispone de una cuenta. Ve al privado y escriba \n" + COMMANDS.main,
   TIMEOUT: "%e% El tiempo de la partida a finalizado [ JUEGO CANCELADO ], para iniciar una nueva escriba " + COMMANDS.create,
   LOBBY_NOT_FOUND: "%e% Hubo un error, al parecer no se ha iniciado ninguna partida, si quiere comenzar una ejecute\n" + COMMANDS.create
 };

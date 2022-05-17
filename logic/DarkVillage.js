@@ -6,6 +6,7 @@ const main = require("./main/main.js");
 const bot_info = require("./main/info.js");
 
 const game = require("./game/game.js");
+const start_game = require("./game/start-game.js");
 const create_game = require("./game/create-game.js");
 const join_game = require("./game/join-game.js");
 
@@ -19,6 +20,7 @@ module.exports = {
   bot_info,
   
   game,
+  start_game,
   create_game,
   join_game,
 };

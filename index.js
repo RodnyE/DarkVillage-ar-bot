@@ -11,6 +11,7 @@ bot.on("info", DV.bot_info);
 bot.on("main", DV.main);
 
 bot.on("game", DV.game);
+bot.on("game/start", DV.start_game);
 bot.on("game/create", DV.create_game);
 bot.on("game/join", DV.join_game);
 

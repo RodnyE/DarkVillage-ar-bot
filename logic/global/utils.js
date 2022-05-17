@@ -10,6 +10,14 @@ generate_id.chars = "abcdefghijklmnopqrstuvwxyz";
 generate_id.chars += generate_id.chars.toUpperCase();
 for(let i = 0; i < 10; i++) generate_id.chars+=i;
 
+// RANDOM NUMBER //
+function random_number (min, max) {
+  return Math.round(Math.random()*max) + min;
+}
+// RANDOM ITEM //
+function random_item (arr) {
+  return arr[ Math.round(Math.random()*(arr.length-1)) ];
+}
 
 // ELIMINAR DIRECTORIO //
 fs.delete_folder = path => {
@@ -30,7 +38,7 @@ function digitalMinutes (sec) {
   let hour = sec/3600;
   let min = sec/60 - parseInt(hour)*60;
   let s = (min - parseInt(min)) * 60;
-  return parseInt(hour) + ":" + (min>=10?"":"0") + parseInt(min) + ":" + (s>=10?"":"0") + parseInt(s) + "s";
+  return parseInt(hour) + ":" + (min>=10?"":"0") + parseInt(min) + ":" + (s>=10?"":"0") + parseInt(s);
 }
 
 // ARRAY STRING REPLACE //
@@ -72,5 +80,8 @@ module.exports = {
   u,
   generate_id,
   font_number,
-  digitalMinutes
+  digitalMinutes,
+  
+  random_number,
+  random_item,
 };
