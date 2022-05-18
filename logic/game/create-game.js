@@ -9,7 +9,7 @@ const CreateGame = (req, res) => {
   if(req.group){
     
     Game.lobby[req.group] = {
-      started: "waiting players",
+      status: "waiting players",
       type: "normal",
       time: Date.now(),
       scene: {

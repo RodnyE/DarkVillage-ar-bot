@@ -16,7 +16,7 @@ const StartGame = (req, res) => {
       let players_length = Object.keys(lobby.players).length;
       if (players_length >= Game.MIN_PLAYERS) { 
         //si hay suficientes jugadores
-        if (lobby.started == "waiting players") {
+        if (lobby.status == "waiting players") {
           //si aún no están jugando
           
           /** INICIAR PARTIDA **/
@@ -33,8 +33,12 @@ const StartGame = (req, res) => {
             }
           })();
           roles.sort(function() {return Math.random() - 0.5});
-          let i = 0; for (let player in lobby.players) { player.role = roles[i]; i++ }
-          lobby.started = "waiting roles";
+          let i = 0; for (let player in lobby.players) { 
+            player.role = roles[i]; 
+            player.status = "waiting role";
+            i++;
+          }
+          lobby.status = "waiting roles";
           
           res.send([
             "%m% INICIANDO JUEGO...\n\nSus roles han sido repartidos, vayan a mi pv y envien /dv para obtenerlo",

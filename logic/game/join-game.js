@@ -18,9 +18,9 @@ const JoinGame = (req, res) => {
     let lobby = Game.lobby[req.group];
     
     if (lobby) { // si lobby existe
-      if (lobby.started == "waiting players") { // si espera jugadores
+      if (lobby.status == "waiting players") { // si espera jugadores
        Game.refreshTimeout(lobby);
-       if (lobby.started != "timeout") { // si no terminó el tiempo de espera
+       if (lobby.status != "timeout") { // si no terminó el tiempo de espera
         
         if (!lobby.players[user_data.id]) { // si usuario no está en lobby
           let length = Object.keys(lobby.players).length;
@@ -29,11 +29,10 @@ const JoinGame = (req, res) => {
             /* añadir jugador a partida */
             lobby.players[user_data.id] = {
               name: user_data.nick,
-              ready: false,
+              status: "waiting start",
               role: null,
               place: "home",
-              turn: 0,
-              dead: false
+              turn: 0
             }; length++;
             
             user_data.game.lobby = req.group;

@@ -1,6 +1,6 @@
 const { PATH } = require("../../../config.js");
 
-const { WELCOME, GAME } = require(PATH.global + "/string.js");
+const { COMMANDS, WELCOME, GAME } = require(PATH.global + "/string.js");
 const ROLES_PACK = require(PATH.engine + "/roles.js");
 const UserData = require(PATH.global + "/user-data.js");
 
@@ -12,8 +12,13 @@ const Private = (req, res, Game) => {
     let lobby = Game.lobby[String(user_data.game.lobby)];
     if (lobby) {
       let player = lobby.players[user_data.id];
-      if(lobby.started == "waiting players") res.send("%m% Cuando la partida se inicie, utilice ese comando para jugar, por ahora no es necesario...");
-      else if (lobby.started == "waiting roles") res.send(ROLES_PACK[player.role].info);
+      
+      if (player.status == "waiting start") res.send("%m% Aún no se a iniciado la partida, envie en el grupo\n" + COMMANDS.start);
+      else if (player.status == "ready") res.send("%e% Aún no ha comenzado el juego, ve al grupo y envia " + COMMANDS.game);
+      else if (player.status == "waiting role") {
+        res.send(ROLES_PACK[player.role].info);
+        player.status = "ready";
+      }
     }
     else {
       user_data.game.lobby = false;
